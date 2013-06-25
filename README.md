@@ -1,7 +1,8 @@
 ## Node SQL Query Builder
 
-This is adapter based SQL query builder. This means that building queries for every DB like MySQL(included),
-SQLite is handled by separate adapters. It make this sql query builder highly extendable.
+This is adapter-based SQL query builder. Building queries for different DB engines 
+is handled by separate adapters. MySQL support is included.  It makes this query 
+builder highly extendable.
 
 ## How to use
 
@@ -126,9 +127,9 @@ console.log(query.toString().bold.blue);
 
 #### v.0.0.4Beta
 
-- Syntax changes acording jshint.
+- Syntax changes according to jshint.
 - Added colors dependency only to run examples.
 
 #### v.0.0.3Beta
 
-- small tunes of the code to be cleater and more readable.
+- small tunes of the code to be clearer and more readable.
