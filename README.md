@@ -19,6 +19,9 @@ var query = new Select({
 	having:['t = 1 ASC', 'b = 2 DESC']
 });
 
+// you can assign special query options
+query.option('DISTINCT');
+
 // You can use chains
 query
 	.select('u.*')
@@ -100,6 +103,18 @@ query.values({
 	description: "this is user's \"descritption\"! \n Or ''not? \n Anyway #1 user to test simbols."
 });
 
+query.values([
+	{ id: 0, name: 'sergey' },
+	{ id: 1, name: 'andrey' },
+	{ id: 2, name: 'pavel' }
+]);
+
+query.values([
+	'sergey',
+	'andrey',
+	'pavel'
+]);
+
 console.log(query.toString().bold.blue);
 ```
 
@@ -115,7 +130,8 @@ var query = new Update();
 query.table('user');
 
 query.set({
-	'name': 'sergey'
+	'name': 'sergey',
+	'isAdmin': false
 });
 
 query.where('id = 1').where(['block = 0', 'date > NOW()']);
@@ -124,6 +140,15 @@ console.log(query.toString().bold.blue);
 ```
 
 ## Change Log
+
+#### v.0.0.5Beta
+
+- Added feature to create INSERT with multiple value
+- Added feature to specify the names of columns in the INSERT
+- Added SET keyword into UPDATE query
+- Escape names of fields into UPDATE query
+- Correct substitution in INSERT and UPDATE values of types Boolean and Number
+- Fixed field names in case JOIN multiple table
 
 #### v.0.0.4Beta
 
