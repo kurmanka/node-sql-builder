@@ -1,7 +1,7 @@
 {
   "name": "sql-builder",
   "preferGlobal": "false",
-  "version": "0.0.5beta",
+  "version": "0.0.5-beta",
   "author": {
     "email": "serg4172@mail.ru",
     "name": "Sergey Romanov",
